@@ -104,15 +104,19 @@ def game(resolution: list):
 
     while program_running:
         while game_running:
-            click_pos = randomize_cursor_position(target_pos, 250)
-            sleep_time = randomize_sleep_time(0.25, 0.2)
+            click_pos = randomize_cursor_position(target_pos, 200)
+            sleep_time = randomize_sleep_time(0.2, 0.1)
 
             pydirectinput.leftClick(click_pos[0], click_pos[1], duration=randomize_sleep_time(0.1, 0.04))
+            pyautogui.scroll(1)
+
+            time.sleep(sleep_time*0.05)
             pydirectinput.keyDown('f')
 
-            time.sleep(sleep_time*0.2)
+            time.sleep(sleep_time*0.1)
             pydirectinput.keyUp('f')
-            time.sleep(sleep_time*0.3)
+            
+            time.sleep(sleep_time*0.2)
         else:
             time.sleep(0.1)
 
