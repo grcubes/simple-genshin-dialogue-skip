@@ -3,7 +3,7 @@ Ayuda a que el dialogo avanze mas rapido
 El programa en si esta en ingles, asi que usen un traductor o algo
 ## Como usar:
 Primero corre este comanmdo en tu terminal:
-```
+```plaintext
 pip install -r requirements.txt
 ```
 Despues, corre `run.bat` como administrador
