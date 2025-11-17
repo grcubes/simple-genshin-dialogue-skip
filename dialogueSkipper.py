@@ -55,21 +55,24 @@ def calculate_resolution():
 
     return set_resolution(screenWidth, screenHeight)
 
+
 def toggle_start():
     global game_running
     game_running = True
-    print("\nDialogue skipper started...")
+    print("Dialogue skipper started...")
+
 
 def toggle_pause():
     global game_running
     game_running = False
-    print("\nDialogue skipper paused...")
+    print("Dialogue skipper paused...")
+
 
 def toggle_exit():
     global program_running, game_running
     game_running = False
     program_running = False
-    print("\nExiting dialogue skipper...")
+    print("Exiting dialogue skipper...\n")
 
 
 def randomize_cursor_position(target_pos: tuple, variance: int):
@@ -77,10 +80,10 @@ def randomize_cursor_position(target_pos: tuple, variance: int):
     rand_y = target_pos[1] + random.randint(-variance, variance)
     return (rand_x, rand_y)
 
+
 def randomize_sleep_time(target_time: int, variance: int):
     rand_time = target_time + random.uniform(-variance, variance)
     return rand_time
-
 
 
 def game(resolution: list):
@@ -102,16 +105,14 @@ def game(resolution: list):
     while program_running:
         while game_running:
             click_pos = randomize_cursor_position(target_pos, 250)
-            print(click_pos)
             sleep_time = randomize_sleep_time(0.25, 0.2)
-            print(sleep_time)
 
-            pydirectinput.leftClick(click_pos[0], click_pos[1], duration=0.1)
+            pydirectinput.leftClick(click_pos[0], click_pos[1], duration=randomize_sleep_time(0.1, 0.04))
             pydirectinput.keyDown('f')
 
-            time.sleep(sleep_time*0.5)
+            time.sleep(sleep_time*0.2)
             pydirectinput.keyUp('f')
-            time.sleep(sleep_time*0.5)
+            time.sleep(sleep_time*0.3)
         else:
             time.sleep(0.1)
 
@@ -126,9 +127,6 @@ def main():
 
     resolution = calculate_resolution()
     game(resolution)
-
-    input("\nPress Enter to exit...")
-    quit()
 
 
 if __name__ == "__main__":
