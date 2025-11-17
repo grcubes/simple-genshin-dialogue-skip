@@ -1,5 +1,5 @@
 ﻿# Simple Genshin Dialogue Autoskip
-For English, see [README.en.md](README.en.md)</br>
+### Other Languages:
 Para español, lea [README.es.md](README.es.md)
 </br>
 </br>
