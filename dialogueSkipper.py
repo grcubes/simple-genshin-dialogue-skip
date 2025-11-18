@@ -108,9 +108,9 @@ def game(resolution: list):
             sleep_time = randomize_sleep_time(0.2, 0.1)
 
             pydirectinput.leftClick(click_pos[0], click_pos[1], duration=randomize_sleep_time(0.1, 0.04))
-            pyautogui.scroll(1)
-
             time.sleep(sleep_time*0.05)
+
+            pyautogui.scroll(1)
             pydirectinput.keyDown('f')
 
             time.sleep(sleep_time*0.1)
